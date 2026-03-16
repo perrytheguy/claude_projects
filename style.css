@@ -1,0 +1,357 @@
+/* ===== CSS Variables ===== */
+:root {
+  --bg-primary: #1a1a2e;
+  --bg-secondary: #16213e;
+  --bg-card: #0f3460;
+  --accent: #e94560;
+  --accent-hover: #c73652;
+  --text-primary: #eee;
+  --text-secondary: #aaa;
+  --badge-bg: #0f3460;
+  --badge-border: #e94560;
+  --font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --radius: 8px;
+  --transition: 0.3s ease;
+}
+
+/* ===== Reset & Base ===== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font);
+  line-height: 1.6;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+a:hover {
+  color: var(--accent-hover);
+}
+
+/* ===== Header ===== */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: rgba(26, 26, 46, 0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(233, 69, 96, 0.2);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.logo span {
+  color: var(--accent);
+}
+
+nav {
+  display: flex;
+  gap: 2rem;
+}
+
+nav a {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  transition: color var(--transition);
+}
+
+nav a:hover {
+  color: var(--accent);
+}
+
+/* ===== Section Base ===== */
+section {
+  padding: 80px 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: var(--accent);
+  margin: 0.5rem auto 0;
+  border-radius: 2px;
+}
+
+/* ===== Hero ===== */
+#hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.hero-greeting {
+  font-size: 1.1rem;
+  color: var(--accent);
+  letter-spacing: 0.1em;
+  margin-bottom: 0.8rem;
+}
+
+.hero-name {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.hero-role {
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+}
+
+.hero-role span {
+  color: var(--accent);
+}
+
+.hero-desc {
+  max-width: 500px;
+  color: var(--text-secondary);
+  margin-bottom: 2.5rem;
+  font-size: 1rem;
+}
+
+.btn {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  padding: 0.75rem 2rem;
+  border-radius: var(--radius);
+  font-size: 1rem;
+  font-weight: 600;
+  transition: background var(--transition), transform var(--transition);
+}
+
+.btn:hover {
+  background: var(--accent-hover);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* ===== Skills ===== */
+#skills {
+  background-color: var(--bg-secondary);
+  max-width: 100%;
+  padding: 80px 2rem;
+}
+
+#skills .inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.badge {
+  background: var(--badge-bg);
+  border: 1px solid var(--badge-border);
+  color: var(--text-primary);
+  padding: 0.5rem 1.4rem;
+  border-radius: 100px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: background var(--transition), transform var(--transition);
+}
+
+.badge:hover {
+  background: var(--accent);
+  transform: translateY(-3px);
+}
+
+/* ===== Projects ===== */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.card {
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  padding: 1.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  border: 1px solid rgba(233, 69, 96, 0.15);
+  transition: transform var(--transition), border-color var(--transition);
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  border-color: var(--accent);
+}
+
+.card-tag {
+  font-size: 0.75rem;
+  color: var(--accent);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.card h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.card p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  flex: 1;
+}
+
+.card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin-top: 0.5rem;
+}
+
+.card-link::after {
+  content: '→';
+  transition: transform var(--transition);
+}
+
+.card-link:hover::after {
+  transform: translateX(4px);
+}
+
+/* ===== Contact / Footer ===== */
+footer {
+  background-color: var(--bg-secondary);
+  border-top: 1px solid rgba(233, 69, 96, 0.2);
+  padding: 60px 2rem;
+  text-align: center;
+}
+
+footer .section-title {
+  margin-bottom: 1.5rem;
+}
+
+footer p {
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+}
+
+.contact-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-primary);
+  font-size: 1rem;
+  padding: 0.6rem 1.4rem;
+  border: 1px solid rgba(233, 69, 96, 0.4);
+  border-radius: var(--radius);
+  transition: border-color var(--transition), background var(--transition);
+}
+
+.contact-item:hover {
+  border-color: var(--accent);
+  background: rgba(233, 69, 96, 0.08);
+  color: var(--text-primary);
+}
+
+.contact-icon {
+  font-size: 1.2rem;
+}
+
+.footer-copy {
+  margin-top: 3rem;
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  header {
+    padding: 1rem;
+  }
+
+  nav {
+    gap: 1.2rem;
+  }
+
+  nav a {
+    font-size: 0.85rem;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  section {
+    padding: 60px 1.2rem;
+  }
+
+  #skills {
+    padding: 60px 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    font-size: 1.1rem;
+  }
+
+  nav {
+    gap: 0.8rem;
+  }
+
+  .contact-links {
+    flex-direction: column;
+    align-items: center;
+  }
+}
