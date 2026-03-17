@@ -314,6 +314,21 @@ footer p {
   font-size: 0.85rem;
 }
 
+/* ===== Visitor Counter ===== */
+.visitor-counter {
+  margin-top: 1.5rem;
+}
+
+.visitor-counter img {
+  height: 22px;
+  opacity: 0.85;
+  transition: opacity var(--transition);
+}
+
+.visitor-counter img:hover {
+  opacity: 1;
+}
+
 /* ===== Contact Form ===== */
 .contact-form {
   display: flex;
